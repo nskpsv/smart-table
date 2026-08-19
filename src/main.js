@@ -28,7 +28,8 @@ function collectState() {
     return {
         ...state,
         rowsPerPage,
-        page
+        page,
+        total: [state.totalFrom, state.totalTo]
     };
 }
 
@@ -77,7 +78,7 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
 });
 
-const applySearching = initSearching(sampleTable.search.elements);
+const applySearching = initSearching('search');
 
 
 const appRoot = document.querySelector('#app');
